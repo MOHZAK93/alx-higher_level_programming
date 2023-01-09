@@ -12,17 +12,14 @@
 
 int is_palindrome(listint_t **head)
 {
-	int i = -1, n = 0, j = 0;
+	int n, i = -1, j = 0;
 	int *arr1;
-	listint_t *current, *new;
+	const listint_t *new;
 
-	current = *head;
 	new = *head;
-	while (current != NULL)
-	{
-		current = current->next;
-		n++;
-	}
+	
+	n = list_len(head);
+
 	arr1 = malloc(sizeof(arr1) * n);
 	if (arr1 == NULL)
 		return (1);
@@ -41,4 +38,17 @@ int is_palindrome(listint_t **head)
 		j++;
 	}
 	return (1);
+}
+
+int list_len(listint_t **head)
+{
+	int n;
+	listint_t *current = *head;
+
+	while (current != NULL)
+	{
+		n++;
+		current = current->next;
+	}
+	return (n);
 }
