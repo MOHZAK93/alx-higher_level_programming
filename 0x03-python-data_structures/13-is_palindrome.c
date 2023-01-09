@@ -14,7 +14,7 @@ int is_palindrome(listint_t **head)
 {
 	int i = -1, n = 0, j = 0;
 	int *arr1;
-	const listint_t *current, *new;
+	listint_t *current, *new;
 
 	current = *head;
 	new = *head;
