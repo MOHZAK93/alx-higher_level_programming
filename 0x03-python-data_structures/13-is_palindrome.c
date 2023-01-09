@@ -25,7 +25,9 @@ int is_palindrome(listint_t **head)
     }
     arr1 = malloc(sizeof(arr1) * n);
     arr2 = malloc(sizeof(arr2) * n);
-
+    
+    if (arr1 == NULL || arr2 == NULL)
+        return (1);
     while (new != NULL)
     {
         i++;
