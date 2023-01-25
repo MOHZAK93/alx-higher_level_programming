@@ -77,7 +77,7 @@ class Square:
             value: value of position
         """
         if (
-                type(value) is not tuple
+                not isinstance(value, tuple)
                 or len(value) != 2
                 or type(value[0]) != int
                 or type(value[1]) != int
