@@ -4,15 +4,16 @@
 
 class Square:
     """Defines a square"""
+
     def __init__(self, size=0, position=(0, 0)):
         """Initialize the square with a size.
 
         Args:
-            size: size of square
-            position: position of square
+            size (:obj:`int`, optional): Size of square
+            position (:obj:`(int, int)`, optional): coordinates of square
         """
         self.__size = size
-        self.__position = position
+        self.position = position
 
     @property
     def size(self):
