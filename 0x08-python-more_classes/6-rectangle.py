@@ -4,7 +4,7 @@
 
 class Rectangle:
     """Defines a rectangle"""
-    
+
     """A public class attribute counting the number of rectangles"""
     number_of_instances = 0
 
