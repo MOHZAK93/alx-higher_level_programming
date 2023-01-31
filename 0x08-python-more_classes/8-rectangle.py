@@ -60,7 +60,7 @@ class Rectangle:
         else:
             self.__height = value
 
-    @classmethod
+    @staticmethod
     def bigger_or_equal(rect_1, rect_2):
         """Static method that returns the biggest rectangel
             based on the area
