@@ -18,6 +18,12 @@ Using ``add_integer``
 >>> add_integer(2)
 100
 
+>>> add_integer(11, -2)
+9
+
+>>> add_integer(-2.4, 11.2)
+9
+
 >>> add_integer("45", 5)
 Traceback (most recent call last):
 ...
