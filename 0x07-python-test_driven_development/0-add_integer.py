@@ -5,7 +5,7 @@
 
 def add_integer(a, b=98):
     """Adds two integers.
-    
+
     Args:
         a (int|float): first integer
         b (:obj:`int|float`, optional): second integer. Defaults to 98.
