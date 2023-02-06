@@ -12,4 +12,4 @@ def lookup(obj):
         Returns:
             list of object
     """
-    return list(obj.__dict__)
+    return list(dir(obj))
