@@ -3,6 +3,6 @@
 """Only sub class module"""
 
 
-class BaseGerometry:
+class BaseGeometry:
     """An empty class"""
     pass
