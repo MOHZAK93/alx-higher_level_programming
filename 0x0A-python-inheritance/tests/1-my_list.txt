@@ -22,3 +22,7 @@ True
 Traceback (most recent call last):
 	...
 NameError: name 'my_list_1' is not defined
+
+>>> my_list = MyList([])
+>>> my_list.print_sorted()
+[]
