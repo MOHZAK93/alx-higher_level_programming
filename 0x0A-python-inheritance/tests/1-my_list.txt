@@ -18,9 +18,7 @@ True
 >>> print(my_list)
 [1, 5, 3]
 
->>> my_list = MyList([1, 2, 3])
->>> my_list
-[1, 2, 3]
-
-my_list.print_sorted()
-[1, 2, 3]
+>>> my_list_1.print_sorted()
+Traceback (most recent call last):
+	...
+NameError: name 'my_list_1' is not defined
