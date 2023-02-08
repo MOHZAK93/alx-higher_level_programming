@@ -13,5 +13,5 @@ while i < size:
     item_list.append(sys.argv[i])
     i += 1
 
-save_to_json_file(item_list, "add_item.json")
 load_from_json_file("add_item.json")
+save_to_json_file(item_list, "add_item.json")
