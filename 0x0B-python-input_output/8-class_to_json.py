@@ -11,4 +11,6 @@ def class_to_json(obj):
         Args:
             obj: instance of a class
     """
-    return json.dumps(obj)
+    if "__dict__" in dir(obj):
+        return obj.__dict__.copy()
+    return {}
