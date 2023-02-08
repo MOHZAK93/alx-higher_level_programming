@@ -9,5 +9,6 @@ def read_file(filename=""):
         Args:
             filename: name of rile to read
     """
-    with open(filename, encoding="utf-8") as f:
-        f.read()
+    with open(filename, encoding="utf-8") as file_obj:
+        for line in file_obj:
+            print(line, end='')
