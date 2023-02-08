@@ -10,6 +10,4 @@ def read_file(filename=""):
             filename: name of rile to read
     """
     with open(filename, encoding="utf-8") as f:
-        f = f.read()
-        for line in f:
-            print(line, end='')
+        f.read()
