@@ -1,7 +1,5 @@
 #!/usr/bin/python3
-"""
-Addition module
-"""
+"""Add Integer"""
 
 
 def add_integer(a, b=98):
