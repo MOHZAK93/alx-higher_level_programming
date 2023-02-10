@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-
-"""Matrix division module"""
+"""Matrix division"""
 
 
 def matrix_divided(matrix, div):
@@ -20,16 +19,14 @@ def matrix_divided(matrix, div):
             not matrix
             or type(matrix) != list
             or any(type(row) != list for row in matrix)
-            or any(
-                type(elem) not in (int, float)
-                for elem in [x for row in matrix for x in row]
-                )
+            or any(type(elem) not in [
+                int, float] for elem in [x for row in matrix for x in row])
             ):
-        raise TypeError("matrix must be a matrix\
-                        (list of lists) of integers/floats")
+        raise TypeError("matrix must be a matrix (list of lists) of \
+integers/floats")
     if any(len(row) != len(matrix[0]) for row in matrix):
         raise TypeError("Each row of the matrix must have the same size")
-    if type(div) not in (int, float):
+    if type(div) not in [int, float]:
         raise TypeError("div must be a number")
     if div == 0:
         raise ZeroDivisionError("division by zero")
