@@ -5,6 +5,7 @@ from .base import Base
 
 class Rectangle(Base):
     """Defines a Rectangle"""
+
     @property
     def width(self):
         return (self.__width)
@@ -106,4 +107,8 @@ class Rectangle(Base):
                     self.__y = value
 
     def to_dictionary(self):
-        return self.__dict__
+        return {"id": self.id,
+                "width": self.__width,
+                "height": self.__height,
+                "x": self.__x,
+                "y": self.__y}

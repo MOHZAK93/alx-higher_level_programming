@@ -52,4 +52,7 @@ class Square(Rectangle):
                 self.id, self.x, self.y, self.width)
 
     def to_dictionary(self):
-        return self.__dict__.copy()
+        return {"id": self.id,
+                "size": self.size,
+                "x": self.x,
+                "y": self.y}
