@@ -8,10 +8,14 @@ class Rectangle(Base):
 
     @property
     def width(self):
+        """Getter for width attribute"""
+
         return (self.__width)
 
     @width.setter
     def width(self, value):
+        """Setter for width attribute"""
+
         if type(value) is not int:
             raise TypeError("width must be an integer")
         if value <= 0:
@@ -20,10 +24,14 @@ class Rectangle(Base):
 
     @property
     def height(self):
+        """Getter for height attribute"""
+
         return (self.__height)
 
     @height.setter
     def height(self, value):
+        """Setter for height attribute"""
+
         if type(value) is not int:
             raise TypeError("height must be an integer")
         if value <= 0:
@@ -32,10 +40,14 @@ class Rectangle(Base):
 
     @property
     def x(self):
+        """Getter for x attribute"""
+
         return (self.__x)
 
     @x.setter
     def x(self, value):
+        """Setter for x attrubute"""
+
         if type(value) is not int:
             raise TypeError("x must be an integer")
         if value < 0:
@@ -44,10 +56,14 @@ class Rectangle(Base):
 
     @property
     def y(self):
+        """Getter for y attribute"""
+
         return (self.__y)
 
     @y.setter
     def y(self, value):
+        """Setter for y attribute"""
+
         if type(value) is not int:
             raise TypeError("y must be an integer")
         if value < 0:
@@ -55,7 +71,16 @@ class Rectangle(Base):
         self.__y = value
 
     def __init__(self, width, height, x=0, y=0, id=None):
-        """Initializes object"""
+        """Initializes object
+
+        Args:
+            width: width of rectangle
+            height: height of rectangle
+            x: horizontal offset
+            y: vertical offset
+            id: object id
+        """
+
         super().__init__(id)
         self.width = width
         self.height = height
@@ -64,9 +89,12 @@ class Rectangle(Base):
 
     def area(self):
         """Computes area of rectangle"""
+
         return self.__width * self.__height
 
     def display(self):
+        """Prints rectangle instance with # character"""
+
         for y in range(self.__y):
             print()
         for i in range(self.__height):
@@ -77,10 +105,19 @@ class Rectangle(Base):
             print()
 
     def __str__(self):
+        """string representation of object"""
+
         return "[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}".format(
                 self.id, self.__x, self.__y, self.__width, self.__height)
 
     def update(self, *args, **kwargs):
+        """Assigns argument to each attribute
+
+        Args:
+            args: no-keyword argument
+            kwargs: keyword argument
+        """
+
         if args is not None:
             for i in range(len(args)):
                 if i == 0:
@@ -107,6 +144,8 @@ class Rectangle(Base):
                     self.__y = value
 
     def to_dictionary(self):
+        """Returns the dictionary representation of Rectangle"""
+
         return {"id": self.id,
                 "width": self.__width,
                 "height": self.__height,
