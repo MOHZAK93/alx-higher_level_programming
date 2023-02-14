@@ -78,8 +78,8 @@ class Base:
         elif cls.__name__ == "Square":
             field = ['id', 'size', 'x', 'y']
         if os.path.isfile(file):
-            with open(file, "r", endcoding="utf-8") as csv:
-                reader = csv.DictReader(csv)
+            with open(file, "r") as csvf:
+                reader = csv.DictReader(csvf)
                 for row in reader:
                     dictionary = {key: int(row[key]) for key in fields}
                     instances.append(cls.create(**dictionary))
