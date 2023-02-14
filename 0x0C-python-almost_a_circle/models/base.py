@@ -72,9 +72,15 @@ class Base:
         """Returns a list of intances"""
 
         file = "{}.json".format(cls.__name__)
-        instances = []
+        instances, fields = [], []
+        if cls.__name__ == "Rectangle":
+            fields = ['id', 'width', 'height', 'x', 'y']
+        elif cls.__name__ == "Square":
+            field = ['id', 'size', 'x', 'y']
         if os.path.isfile(file):
-            with open(file, "r", endcoding="utf-8") as file_obj:
-                for dictionary in cls.from_json_string(file_obj.read()):
+            with open(file, "r", endcoding="utf-8") as csv:
+                reader = csv.DictReader(csv)
+                for row in reader:
+                    dictionary = {key: int(row[key]) for key in fields}
                     instances.append(cls.create(**dictionary))
         return instances
