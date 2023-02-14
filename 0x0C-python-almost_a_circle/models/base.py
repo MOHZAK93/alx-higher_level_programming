@@ -31,12 +31,18 @@ class Base:
     @classmethod
     def save_to_file(cls, list_objs):
         """Writes the JSON string representation
-            of list_objs to a file"""
+            of list_objs to a file
+
+        Args:
+            list_objs: list of instances who inherits from Base
+        """
 
         file = "{}.json".format(cls.__name__)
-
         with open(file, "w") as file_obj:
-            file_obj.write('[')
+            if list_objs is not None:
+                file_obj.write('[')
+            else:
+                return
             for i in range(len(list_objs)):
                 file_obj.write(Base.to_json_string(
                     list_objs[i].to_dictionary()))
