@@ -30,25 +30,18 @@ class Base:
 
     @classmethod
     def save_to_file(cls, list_objs):
-        """Writes the JSON string representation
-            of list_objs to a file
+        """Writes the JSON string representation of list_objs to a file
 
         Args:
             list_objs: list of instances who inherits from Base
         """
 
         file = "{}.json".format(cls.__name__)
+        list_dict = []
+        if list_objs is not None:
+            list_dict = [obj.to_dictionary() for obj in list_objs]
         with open(file, "w") as file_obj:
-            if list_objs is None:
-                file_obj.close()
-                return
-            file_obj.write('[')
-            for i in range(len(list_objs)):
-                file_obj.write(Base.to_json_string(
-                    list_objs[i].to_dictionary()))
-                if i != len(list_objs) - 1:
-                    file_obj.write(', ')
-            file_obj.write(']')
+            file_obj.write(cls.to_json_string(list_dict))
 
     @staticmethod
     def from_json_string(json_string):
