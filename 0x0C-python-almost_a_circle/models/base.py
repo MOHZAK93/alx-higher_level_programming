@@ -71,12 +71,12 @@ class Base:
     def load_from_file(cls):
         """Returns a list of intances"""
 
-        file = "{}.json".format(cls.__name__)
+        file = "{}.csv".format(cls.__name__)
         instances, fields = [], []
         if cls.__name__ == "Rectangle":
             fields = ['id', 'width', 'height', 'x', 'y']
         elif cls.__name__ == "Square":
-            field = ['id', 'size', 'x', 'y']
+            fields = ['id', 'size', 'x', 'y']
         if os.path.isfile(file):
             with open(file, "r") as csvf:
                 reader = csv.DictReader(csvf)
