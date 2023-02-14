@@ -52,7 +52,14 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
-        """Returns the list of JSON string representation"""
+        """Returns the list of JSON string representation
+
+        Args:
+            json_string: string to decode
+        """
+
+        if json_string is None:
+            return "[]"
 
         return json.loads(json_string)
 
