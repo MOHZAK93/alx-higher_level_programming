@@ -39,16 +39,15 @@ class Base:
 
         file = "{}.json".format(cls.__name__)
         with open(file, "w") as file_obj:
-            if list_objs is not None:
-                file_obj.write('[')
-            else:
+            if list_objs is None:
                 return
+            file_obj.write('[')
             for i in range(len(list_objs)):
                 file_obj.write(Base.to_json_string(
                     list_objs[i].to_dictionary()))
                 if i != len(list_objs) - 1:
                     file_obj.write(', ')
-            file_obj.write(']')
+                file_obj.write(']')
 
     @staticmethod
     def from_json_string(json_string):
