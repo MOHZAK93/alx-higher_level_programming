@@ -48,7 +48,7 @@ class Base:
                     list_objs[i].to_dictionary()))
                 if i != len(list_objs) - 1:
                     file_obj.write(', ')
-                file_obj.write(']')
+            file_obj.write(']')
 
     @staticmethod
     def from_json_string(json_string):
