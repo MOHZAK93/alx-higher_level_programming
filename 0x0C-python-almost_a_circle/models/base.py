@@ -40,6 +40,7 @@ class Base:
         file = "{}.json".format(cls.__name__)
         with open(file, "w") as file_obj:
             if list_objs is None:
+                file_obj.close()
                 return
             file_obj.write('[')
             for i in range(len(list_objs)):
