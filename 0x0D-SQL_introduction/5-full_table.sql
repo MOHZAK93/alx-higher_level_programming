@@ -1,2 +1,2 @@
 -- lists the full description of table in MySQL server
-SHOW FULL COLUMN FROM first_table;
+SHOW COLUMNS FROM first_table;
