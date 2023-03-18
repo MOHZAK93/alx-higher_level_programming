@@ -3,4 +3,5 @@ SELECT city, AVG(value) AS avg_temp
 	FROM temperatures
 	GROUP BY city
 	LIMIT 3
-ORDER BY state;
+	WHERE month >= 7 AND month <=8
+ORDER BY value avg_temp DESC;
