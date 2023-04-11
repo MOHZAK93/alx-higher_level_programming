@@ -6,6 +6,6 @@ if (num) {
     console.log('C is fun');
     num--;
   }
-} else {
+} else if (!num){
   console.log('Missing number of occurrences');
 }
