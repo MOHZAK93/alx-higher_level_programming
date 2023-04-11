@@ -4,8 +4,8 @@ let num = parseInt(process.argv[2]);
 if (num) {
   while (num) {
     console.log('C is fun');
-    num--;
+    --num;
   }
-} else if (!num){
+} else {
   console.log('Missing number of occurrences');
 }
