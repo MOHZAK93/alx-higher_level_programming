@@ -16,10 +16,8 @@ if __name__ == "__main__":
     """Create a session object"""
     session = Session(engine)
 
-    states = session.query(State).filter(State.id == 1)
-    print(states)
+    states = session.query(State).first()
     if states:
-        for state in states:
-            print("{}: {}".format(state.id, state.name))
+        print("{}: {}".format(states.id, states.name))
     else:
         print("Nothing")
