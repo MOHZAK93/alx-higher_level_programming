@@ -17,10 +17,9 @@ if __name__ == "__main__":
     session = Session(engine)
 
     states = session.query(State).filter(State.id == 1)
-
+    print(states)
     if states:
         for state in states:
             print("{}: {}".format(state.id, state.name))
-        session.close()
     else:
         print("Nothing")
