@@ -16,7 +16,7 @@ if __name__ == "__main__":
     """Create a session object"""
     session = Session(engine)
 
-    states = session.query(State).filter(State.id == 1).all()
+    states = session.query(State).filter(State.id == 1)
 
     if states:
         for state in states:
