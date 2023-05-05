@@ -7,8 +7,8 @@ import sys
 
 if __name__ == "__main__":
     url = 'https://api.github.com/user'
-    username = argv[1]
-    password = argv[2]
+    username = sys.argv[1]
+    password = sys.argv[2]
     res = rq.get(url, auth=HTTPBasicAuth(username, password))
     try:
         obj = res.json()
