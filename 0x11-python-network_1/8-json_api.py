@@ -16,6 +16,6 @@ if __name__ == "__main__":
         if len(obj) == 0:
             print(f"No result")
         else:
-            print(f"[{boj['id']}] {obj['name']}")
+            print(f"[{obj['id']}] {obj['name']}")
     except ValueError:
         print(f"Not a valid JSON")
