@@ -31,7 +31,6 @@ int is_palindrome(listint_t **head)
 	i--;
 	while (i >= 0)
 	{
-		printf("%d  %d\n", arr1[i], arr1[j]);
 		if (arr1[i] != arr1[j])
 			return (0);
 		i--;
