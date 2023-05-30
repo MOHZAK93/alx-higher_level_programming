@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Node module"""
+"""Node Module"""
 
 
 class Node:
@@ -12,20 +12,19 @@ class Node:
             data (int): node data
             next_node: address of the next node
         """
-        self.data = data
-        self.next_node = next_node
+        self.__data = data
+        self.__next_node = next_node
 
     @property
     def data(self):
         """Retrive data"""
-
         return (self.__data)
 
     @data.setter
     def data(self, value):
         """Setter for data"""
 
-        if type(value) is not int:
+        if type(value) != int:
             raise TypeError("data must be an integer")
         else:
             self.__data = value
@@ -33,18 +32,14 @@ class Node:
     @property
     def next_node(self):
         """Retrieve address of next node"""
-
-        return (self.__next_node)
+        return self.__next_node
 
     @next_node.setter
     def next_node(self, value):
         """Set address of next node"""
 
-        if (
-                value is not None
-                and not isinstance(value, Node)
-                ):
-            raise TypeError("next_node must be a NOde object")
+        if not isinstance(value, Node):
+            raise TypeError("next_node must be a Node object")
         else:
             self.__next_node = value
 
@@ -58,7 +53,7 @@ class SinglyLinkedList:
     def __init__(self):
         """Initializes the head of the singly linked list"""
 
-        self.head = None
+        self.__head = None
 
     def __str__(self):
         """String representation of singly linked list"""
@@ -74,7 +69,7 @@ class SinglyLinkedList:
 
     def sorted_insert(self, value):
         """Inserts a new node into the correct sorted position in list"""
-        
+
         new_node = Node(value)
         if self.head is None:
             new_node.next_node = self.head
