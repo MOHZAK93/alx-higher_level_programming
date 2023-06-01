@@ -38,13 +38,13 @@ class Node:
     def next_node(self, value):
         """Set address of next node"""
 
-        if not isinstance(value, Node):
+        if (
+                not isinstance(value, Node)
+                and value is not None
+                ):
             raise TypeError("next_node must be a Node object")
         else:
             self.__next_node = value
-
-
-"""SinglyLinkedList module"""
 
 
 class SinglyLinkedList:
@@ -59,7 +59,7 @@ class SinglyLinkedList:
         """String representation of singly linked list"""
 
         result = ""
-        current = self.head
+        current = self.__head
         while current:
             result += "{:d}".format(current.data)
             if current.next_node:
@@ -71,14 +71,14 @@ class SinglyLinkedList:
         """Inserts a new node into the correct sorted position in list"""
 
         new_node = Node(value)
-        if self.head is None:
-            new_node.next_node = self.head
-            self.head = new_node
-        elif self.head.data >= value:
-            new_node = self.head
-            self.head = new_node
+        if self.__head is None:
+            new_node.next_node = self.__head
+            self.__head = new_node
+        elif self.__head.data >= value:
+            new_node.next_node = self.__head
+            self.__head = new_node
         else:
-            current = self.head
+            current = self.__head
             while current.next_node and current.next_node.data < value:
                 current = current.next_node
             new_node.next_node = current.next_node
