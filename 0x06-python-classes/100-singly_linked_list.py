@@ -12,8 +12,8 @@ class Node:
             data (int): node data
             next_node: address of the next node
         """
-        self.__data = data
-        self.__next_node = next_node
+        self.data = data
+        self.next_node = next_node
 
     @property
     def data(self):
@@ -24,7 +24,7 @@ class Node:
     def data(self, value):
         """Setter for data"""
 
-        if type(value) != int:
+        if type(value) is not int:
             raise TypeError("data must be an integer")
         else:
             self.__data = value
