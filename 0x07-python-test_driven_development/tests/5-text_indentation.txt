@@ -11,7 +11,7 @@ Traceback (most recent call last):
 	...
 TypeError: text must be a string
 
->>> text_indentation([2, 4])
+>>> text_indentation([1, 1])
 Traceback (most recent call last):
 ...
 TypeError: text must be a string
@@ -25,6 +25,7 @@ TypeError: text must be a string
 
 >>> text_indentation("text")
 text
+
 >>> text_indentation("text:4?")
 text:
 <BLANKLINE>
@@ -55,3 +56,15 @@ TypeError: text_indentation() missing 1 required positional argument: 'text'
 Traceback (most recent call last):
 	...
 TypeError: text_indentation() takes 1 positional argument but 2 were given
+
+>>> text_indentation(".")
+.
+<BLANKLINE>
+
+>>> text_indentation("?")
+?
+<BLANKLINE>
+
+>>> text_indentation(":")
+:
+<BLANKLINE>
