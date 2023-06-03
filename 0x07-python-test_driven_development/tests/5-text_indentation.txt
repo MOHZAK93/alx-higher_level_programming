@@ -11,6 +11,11 @@ Traceback (most recent call last):
 	...
 TypeError: text must be a string
 
+>>> text_indentation([2, 4])
+Traceback (most recent call last):
+...
+TypeError: text must be a string
+
 >>> text_indentation("")
 
 >>> text_indentation((2, 5))
@@ -22,6 +27,12 @@ TypeError: text must be a string
 text
 >>> text_indentation("text:4?")
 text:
+<BLANKLINE>
+?
+<BLANKLINE>
+
+>>> text_indentation("444.4?")
+444.
 <BLANKLINE>
 ?
 <BLANKLINE>
