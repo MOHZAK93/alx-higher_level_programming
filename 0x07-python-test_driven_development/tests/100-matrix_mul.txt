@@ -77,3 +77,8 @@ ValueError: m_a and m_b can't be multiplied
 Traceback (most recent call last):
 	...
 TypeError: m_a should contain only integers or floats
+
+>>> print(matrix_mul([1, 2]))
+Traceback (most recent call last):
+	...
+TypeError: matrix_mul() missing 1 required positional argument: 'm_b'
