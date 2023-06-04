@@ -33,10 +33,12 @@ TypeError: m_b must be a list of lists
 Traceback (most recent call last):
 	...
 ValueError: m_a can't be empty
+
 >>> print(matrix_mul([[1, 2], [3, 4]], []))
 Traceback (most recent call last):
 	...
 ValueError: m_b can't be empty
+
 >>> print(matrix_mul([[1, 2], [3, 4]], [[]]))
 Traceback (most recent call last):
 	...
@@ -70,3 +72,8 @@ TypeError: each row of m_b must be of the same size
 Traceback (most recent call last):
 	...
 ValueError: m_a and m_b can't be multiplied
+
+>>> print(matrix_mul([[None], [None]], [[None], [None]]))
+Traceback (most recent call last):
+	...
+TypeError: m_a should contain only integers or floats
