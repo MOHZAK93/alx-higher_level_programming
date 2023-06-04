@@ -29,13 +29,13 @@ text
 >>> text_indentation("text:4?")
 text:
 <BLANKLINE>
-?
+4?
 <BLANKLINE>
 
 >>> text_indentation("444.4?")
 444.
 <BLANKLINE>
-?
+4?
 <BLANKLINE>
 
 >>> text_indentation("ALX. School? How are you: Doe")
